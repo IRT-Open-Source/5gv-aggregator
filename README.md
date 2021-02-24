@@ -70,5 +70,5 @@ $ npm run start:prod
 With following command you can build a [docker image](https://www.docker.com) for this service. But again, typically you use the startup script `up.sh` of the [Platform](../../../5gv-platform) project to do the job.
 
 ```bash
-$ docker build -t aggregator .
+$ docker build -t 5gv-aggregator .
 ```
