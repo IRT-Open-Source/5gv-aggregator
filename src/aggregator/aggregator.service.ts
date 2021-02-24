@@ -199,7 +199,7 @@ export class AggregatorService implements OnModuleDestroy {
         } (stream URLs, incl. ABRS segments)`,
       );
 
-      await this.http.post('http://state-api:3000/cache-state', mediaItems);
+      await this.http.post('http://5gv-state-api:3000/cache-state', mediaItems);
       this.logger.debug('Sent new cache-state config');
 
       await this.setLastProcessed(config);
@@ -213,7 +213,7 @@ export class AggregatorService implements OnModuleDestroy {
   }
 
   async setLastProcessed(config) {
-    const path = `http://state-api:3000/aggregator/config/${config.name}/lastprocessed`;
+    const path = `http://5gv-state-api:3000/aggregator/config/${config.name}/lastprocessed`;
     const lastProcessed = Date.now();
     this.logger.debug(`Updating last processed: ${lastProcessed}`);
     await this.http.patch(path, { lastProcessed });
