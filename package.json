@@ -20,14 +20,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "5gv-dto": "git+ssh://git@github.com/IRT-Open-Source/5gv-dto.git",
+    "5gv-dto": "git+https://git@github.com/IRT-Open-Source/5gv-dto.git",
     "@nestjs/common": "^6.11.11",
     "@nestjs/core": "^6.11.11",
     "@nestjs/microservices": "^6.11.11",
     "@nestjs/platform-express": "^6.11.11",
     "bluebird": "^3.7.2",
     "hls-parser": "^0.5.0",
-    "messenger": "git+ssh://git@github.com/IRT-Open-Source/5gv-messenger.git",
+    "messenger": "git+https://git@github.com/IRT-Open-Source/5gv-messenger.git",
     "node-nats-streaming": "^0.2.6",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
