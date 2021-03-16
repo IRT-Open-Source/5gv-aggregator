@@ -37,7 +37,7 @@ export class ArdMediathekCrawler {
       // 2. Parse on-demand teasers data from home page widgets
       const onDemandTeasers = this.parseOnDemandTeasers(
         homeData.widgets,
-        limit
+        limit,
       );
       this.logger.log(`Found ${onDemandTeasers.length} VoD teasers`);
 
@@ -174,7 +174,11 @@ export class ArdMediathekCrawler {
       images: [playerWidgets.image],
       availableTo: playerWidgets.availableTo,
       streams: [],
-      streamUrls: streamUrls,
+      streamUrls: streamUrls.map(s => this.rectifyUrl(s)),
     };
+  }
+
+  private rectifyUrl(url: string): string {
+    return url.replace(/(^[a-z]+:)?\/\//, 'http://');
   }
 }
